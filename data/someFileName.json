@@ -1,0 +1,15 @@
+{
+  "someArrayName": 
+    [
+      { 
+         "title": "Blog dom mutated"
+         "post": "Example of a new blog entry being added when the page loads."
+         "datePosted": "2025-06-28"
+      },
+      { 
+         "title": "Blog dom mutated 1"
+         "post": "Example of a new blog entry being added when the page loads. 1"
+         "datePosted": "2025-06-28 1"
+      }
+    ]
+}
