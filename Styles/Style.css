@@ -1,0 +1,62 @@
+
+
+/* Body background and font */
+body {
+  background-color: #f8f9fa; 
+  font-family: Arial, sans-serif;
+  padding-bottom: 50px; 
+}
+
+/* Container spacing */
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Header styling */
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+/* Blog post cards */
+.card {
+  margin-bottom: 20px;
+}
+
+/*  input spacing */
+.modal-body input,
+.modal-body textarea {
+  margin-bottom: 15px;
+}
+
+/* Toast  */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1055; /* above modals */
+}
+
+/* Search input spacing */
+#searchInput {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+/* Footer style */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+@media (max-width: 576px) {
+  #searchInput {
+    max-width: 100%;
+  }
+}
