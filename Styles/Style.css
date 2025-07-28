@@ -1,78 +1,99 @@
-/*  body styling */
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* styling */
 body {
-  background-color: #e9f5f2;
-  font-family: Arial, sans-serif;
-  color: #333;
-  padding: 40px 20px;
+  background: linear-gradient(to right, #e0f7f4, #f0fdfb);
+  font-family: 'Inter', sans-serif;
+  color: #2d2d2d;
   margin: 0;
+  padding: 60px 20px;
+  line-height: 1.6;
 }
 
-/* Container style */
+
 #add-post-section {
-  background-color: white;
-  max-width: 600px;
+  background-color: #ffffff;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 30px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 40px 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d4e4e0;
 }
 
 /* Headings */
+h1, h2 {
+  color: #225c5e;
+  font-weight: 700;
+}
+
 h1 {
   text-align: center;
-  color: #2c7a7b;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 h2 {
-  color: #2c7a7b;
-  margin-bottom: 20px;
-}
-.form-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #2c7a7b;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
 }
 
-/*  textarea */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1e5558;
+}
+
+/* Input and textarea fields */
 input.form-control,
 textarea.form-control {
   width: 100%;
-  padding: 10px;
+  padding: 12px 14px;
   font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #b8d8d3;
+  background-color: #f9fdfd;
+  margin-bottom: 24px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Button */
+input.form-control:focus,
+textarea.form-control:focus {
+  outline: none;
+  border-color: #2c7a7b;
+  box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.2);
+}
+
+/* Button styling */
 button.btn-gradient {
   width: 100%;
-  background-color: #2c7a7b;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 12px;
+  background: linear-gradient(135deg, #2c7a7b, #1e4d4e);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 14px 0;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(44, 122, 123, 0.2);
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
 button.btn-gradient:hover {
-  background-color: #235959;
+  background: linear-gradient(135deg, #256d6e, #143e3f);
+  transform: translateY(-2px);
 }
 
 
 @media (max-width: 600px) {
   body {
-    padding: 20px 10px;
+    padding: 30px 16px;
   }
 
   #add-post-section {
-    padding: 20px;
+    padding: 28px 20px;
   }
 }
 
