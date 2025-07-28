@@ -1,75 +1,75 @@
+///JSON blog data
+const blogDataUrl = "https://Van1410.github.io/blog-data/posts.json";
 
 
-// DOM 
-$(function () {
-  console.log("Blog Admin JS Loaded");
+let posts = [];
 
-  // Load posts from external JSON file
-  async function loadPosts() {
-    try {
-      const response = await fetch("https://van1410.github.io/blog-data/posts.json");
-      const data = await response.json();
-      displayPosts(data.posts);
-    } catch (error) {
-      console.error("Error fetching blog posts:", error);
-    }
-  }
+// Render posts 
+function renderPosts() {
+  const container = $("#posts-container");
+  container.empty();
 
-  // Display blog posts 
-  function displayPosts(posts) {
-    const container = $("#post-container");
-    container.empty();
-    posts.forEach((post, index) => {
-      container.append(`
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">${post.title}</h5>
-            <p class="card-text">${post.post}</p>
-            <p class="card-text"><small class="text-muted">${post.datePosted}</small></p>
-          </div>
+  posts.forEach((post, index) => {
+    const postHtml = $(`
+      <div class="card mb-3">
+        <div class="card-body">
+          <input type="text" class="form-control mb-2" value="${post.title}" data-index="${index}" data-field="title" />
+          <textarea class="form-control mb-2" rows="3" data-index="${index}" data-field="post">${post.post}</textarea>
+          <input type="date" class="form-control mb-2" value="${post.datePosted}" data-index="${index}" data-field="datePosted" />
+          <button class="btn btn-success btn-sm save-btn" data-index="${index}">Save</button>
         </div>
-      `);
-    });
-  }
+      </div>
+    `);
 
-  // Filter blog post
-  $("#searchInput").on("input", function () {
-    const searchTerm = $(this).val().toLowerCase();
-    $("#post-container .card").each(function () {
-      const title = $(this).find(".card-title").text().toLowerCase();
-      $(this).toggle(title.includes(searchTerm));
-    });
+    container.append(postHtml);
   });
+}
 
-  // Add new blog post 
-  $("#addPostForm").on("submit", function (e) {
-    e.preventDefault();
-    const title = $("#newTitle").val();
-    const content = $("#newContent").val();
-    const date = new Date().toISOString().split("T")[0];
+// Fetch blog posts from JSON file
+function fetchPosts() {
+  $.getJSON(blogDataUrl)
+    .done((data) => {
+      posts = data.posts;
+      renderPosts();
+    })
+    .fail(() => {
+      alert("Failed to load blog posts.");
+    });
+}
 
-    if (title && content) {
-      const newPost = `
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <p class="card-text">${content}</p>
-            <p class="card-text"><small class="text-muted">${date}</small></p>
-          </div>
-        </div>
-      `;
-      $("#post-container").prepend(newPost);
+// Save memory
+function savePost(index) {
+  const card = $(`.save-btn[data-index=${index}]`).closest(".card-body");
+  const title = card.find("input[data-field=title]").val();
+  const post = card.find("textarea[data-field=post]").val();
+  const datePosted = card.find("input[data-field=datePosted]").val();
 
-      //  toast
-      const toast = new bootstrap.Toast(document.getElementById('postToast'));
-      toast.show();
+  posts[index] = { title, post, datePosted };
+  alert(`Post ${index + 1} saved (temporarily in memory).`);
+}
 
-      // reset form
-      $("#addPostModal").modal("hide");
-      this.reset();
-    }
-  });
+// Add new post 
+$("#new-post-form").on("submit", function (e) {
+  e.preventDefault();
+  const newPost = {
+    title: $("#new-title").val(),
+    post: $("#new-content").val(),
+    datePosted: $("#new-date").val(),
+  };
 
-  
-  loadPosts();
+  posts.unshift(newPost);  // add new post
+  renderPosts();
+  this.reset();
+  alert("New post added (temporarily in memory).");
+});
+
+// Save button 
+$("#posts-container").on("click", ".save-btn", function () {
+  const index = $(this).data("index");
+  savePost(index);
+});
+
+// Initial load
+$(document).ready(() => {
+  fetchPosts();
 });
