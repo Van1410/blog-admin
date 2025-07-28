@@ -2,53 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Admin</title>
-  <link rel="stylesheet" href="Styles/Style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
-<body>
-  <header>
-    <h1>Blog Admin</h1>
-  </header>
+<body class="bg-light text-dark">
+  <div class="container py-5">
+    <h1 class="mb-4">Blog Admin</h1>
 
-  <main>
-    <section>
-      <h2>Add a New Blog Post</h2>
-      <form id="blogForm">
-        <div class="form-group">
-          <label for="postTitle">Post Title</label>
-          <input type="text" id="postTitle" name="title" required />
-        </div>
-        <div class="form-group">
-          <label for="postContent">Post Content</label>
-          <textarea id="postContent" name="content" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="postDate">Post Date</label>
-          <input type="date" id="postDate" name="date" required />
-        </div>
-        <button type="submit">Add Post</button>
-      </form>
-    </section>
+    <!-- Form to add a new blog post -->
+    <form id="new-post-form" class="mb-5">
+      <div class="mb-3">
+        <label for="post-title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="post-title" required />
+      </div>
+      <div class="mb-3">
+        <label for="post-content" class="form-label">Post</label>
+        <textarea class="form-control" id="post-content" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="post-date" class="form-label">Date Posted</label>
+        <input type="date" class="form-control" id="post-date" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Post</button>
+    </form>
 
-    <section>
-      <h2>Existing Blog Posts</h2>
-      <div id="postsContainer"></div>
-    </section>
-  </main>
+    <!-- Posts will be rendered here -->
+    <div id="posts-list" class="posts-container"></div>
+  </div>
 
-  <footer>
-    <p>© 2025 Van Hamlin. All rights reserved.</p>
-    <nav>
-      <ul>
-        <li><a href="https://wave.webaim.org/report#/https://van1410.github.io/blog-admin/" target="_blank" rel="noopener">WAVE Checker</a></li>
-        <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvan1410.github.io%2Fblog-admin%2F" target="_blank" rel="noopener">Nu HTML Checker</a></li>
-        <li><a href="https://van1410.github.io/Van1410/" target="_blank" rel="noopener">Back to WebDev Profile</a></li>
-      </ul>
-    </nav>
+  <!-- Footer with accessibility links -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-1">© 2025 Van Hamlin</p>
+    <a href="https://validator.w3.org/nu/" class="text-white text-decoration-underline me-3" target="_blank">Nu HTML Checker</a>
+    <a href="https://wave.webaim.org/" class="text-white text-decoration-underline" target="_blank">WAVE Checker</a>
   </footer>
 
-  <script src="Scripts/JavaScript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="scripts/JavaScript.js"></script>
 </body>
 </html>
 
