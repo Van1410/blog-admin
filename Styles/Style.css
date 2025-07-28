@@ -1,61 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
+/* Reset some default spacing */
 body {
-  background: linear-gradient(to right, #e0f7f4, #f0fdfb);
-  font-family: 'Inter', sans-serif;
-  color: #2d2d2d;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
-  padding: 60px 20px;
-  line-height: 1.6;
+  padding: 0;
+  color: #222;
 }
 
-h1, h2 {
-  color: #225c5e;
-  font-weight: 700;
-}
-
-.form-label {
-  font-weight: 600;
-  color: #1e5558;
-}
-
-/* Form Inputs */
-input.form-control,
-textarea.form-control {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 16px;
+/* Container for the admin content */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #ffffff;
   border-radius: 8px;
-  border: 1px solid #b8d8d3;
-  background-color: #f9fdfd;
-  margin-bottom: 24px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input.form-control:focus,
-textarea.form-control:focus {
-  outline: none;
-  border-color: #2c7a7b;
-  box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.2);
+/* Form section */
+form {
+  margin-bottom: 2rem;
 }
 
-/* Cards */
-.card {
-  border: 1px solid #dce8e7;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #333;
 }
 
-/* Save Button */
-button.btn-success {
-  font-weight: 600;
-  padding: 10px 16px;
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  body {
-    padding: 30px 16px;
-  }
+form button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #1b4332;
+}
+
+/* Blog post entries */
+#blogPosts article {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-left: 4px solid #2d6a4f;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Footer styling with high contrast */
+footer {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #ffd700;
+  outline: 2px solid #ffd700;
+  text-decoration: none;
 }
 
