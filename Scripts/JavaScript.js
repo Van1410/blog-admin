@@ -1,31 +1,29 @@
-///JSON blog data
-const blogDataUrl = "https://Van1410.github.io/blog-data/posts.json";
-
+// JSON blog data URL
+const blogDataUrl = "https://van1410.github.io/blog-data/posts.json";
 
 let posts = [];
 
-// Render posts 
+// Render posts to page
 function renderPosts() {
-  const container = $("#posts-container");
+  const container = $("#posts-list");
   container.empty();
 
   posts.forEach((post, index) => {
     const postHtml = $(`
-      <div class="card mb-3">
+      <div class="card mb-4">
         <div class="card-body">
           <input type="text" class="form-control mb-2" value="${post.title}" data-index="${index}" data-field="title" />
           <textarea class="form-control mb-2" rows="3" data-index="${index}" data-field="post">${post.post}</textarea>
           <input type="date" class="form-control mb-2" value="${post.datePosted}" data-index="${index}" data-field="datePosted" />
-          <button class="btn btn-success btn-sm save-btn" data-index="${index}">Save</button>
+          <button class="btn btn-success save-btn" data-index="${index}">Save</button>
         </div>
       </div>
     `);
-
     container.append(postHtml);
   });
 }
 
-// Fetch blog posts from JSON file
+// Fetch blog posts
 function fetchPosts() {
   $.getJSON(blogDataUrl)
     .done((data) => {
@@ -37,7 +35,7 @@ function fetchPosts() {
     });
 }
 
-// Save memory
+// Save 
 function savePost(index) {
   const card = $(`.save-btn[data-index=${index}]`).closest(".card-body");
   const title = card.find("input[data-field=title]").val();
@@ -48,28 +46,28 @@ function savePost(index) {
   alert(`Post ${index + 1} saved (temporarily in memory).`);
 }
 
-// Add new post 
+
 $("#new-post-form").on("submit", function (e) {
   e.preventDefault();
   const newPost = {
-    title: $("#new-title").val(),
-    post: $("#new-content").val(),
-    datePosted: $("#new-date").val(),
+    title: $("#post-title").val(),
+    post: $("#post-content").val(),
+    datePosted: $("#post-date").val(),
   };
 
-  posts.unshift(newPost);  // add new post
+  posts.unshift(newPost);
   renderPosts();
   this.reset();
   alert("New post added (temporarily in memory).");
 });
 
-// Save button 
-$("#posts-container").on("click", ".save-btn", function () {
+// Save button click
+$("#posts-list").on("click", ".save-btn", function () {
   const index = $(this).data("index");
   savePost(index);
 });
 
-// Initial load
+// Load posts on page ready
 $(document).ready(() => {
   fetchPosts();
 });
