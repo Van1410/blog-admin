@@ -1,62 +1,80 @@
-
-
-/* Body background and font */
+/* Basic body styling */
 body {
-  background-color: #f8f9fa; 
+  background-color: #e9f5f2;
   font-family: Arial, sans-serif;
-  padding-bottom: 50px; 
+  color: #333;
+  padding: 40px 20px;
+  margin: 0;
 }
 
-/* Container spacing */
-.container {
-  margin-top: 30px;
-  margin-bottom: 30px;
+/* Container style */
+#add-post-section {
+  background-color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-/* Header styling */
-h1, h2 {
-  margin-bottom: 20px;
-}
-
-/* Blog post cards */
-.card {
-  margin-bottom: 20px;
-}
-
-/*  input spacing */
-.modal-body input,
-.modal-body textarea {
-  margin-bottom: 15px;
-}
-
-/* Toast  */
-#toast-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1055; /* above modals */
-}
-
-/* Search input spacing */
-#searchInput {
-  max-width: 300px;
-  margin-bottom: 20px;
-}
-
-/* Footer style */
-footer {
-  background-color: #343a40;
-  color: #fff;
-  padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+/* Headings */
+h1 {
   text-align: center;
+  color: #2c7a7b;
+  margin-bottom: 40px;
 }
 
+h2 {
+  color: #2c7a7b;
+  margin-bottom: 20px;
+}
 
-@media (max-width: 576px) {
-  #searchInput {
-    max-width: 100%;
+/* Form labels */
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #2c7a7b;
+}
+
+/* Inputs and textarea */
+input.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Button */
+button.btn-gradient {
+  width: 100%;
+  background-color: #2c7a7b;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-gradient:hover {
+  background-color: #235959;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  #add-post-section {
+    padding: 20px;
   }
 }
+
