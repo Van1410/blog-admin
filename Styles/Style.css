@@ -1,4 +1,4 @@
-/* Basic body styling */
+/*  body styling */
 body {
   background-color: #e9f5f2;
   font-family: Arial, sans-serif;
@@ -28,8 +28,6 @@ h2 {
   color: #2c7a7b;
   margin-bottom: 20px;
 }
-
-/* Form labels */
 .form-label {
   display: block;
   margin-bottom: 6px;
@@ -37,7 +35,7 @@ h2 {
   color: #2c7a7b;
 }
 
-/* Inputs and textarea */
+/*  textarea */
 input.form-control,
 textarea.form-control {
   width: 100%;
@@ -67,7 +65,7 @@ button.btn-gradient:hover {
   background-color: #235959;
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
   body {
     padding: 20px 10px;
