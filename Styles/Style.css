@@ -1,7 +1,5 @@
-/* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* styling */
 body {
   background: linear-gradient(to right, #e0f7f4, #f0fdfb);
   font-family: 'Inter', sans-serif;
@@ -11,42 +9,17 @@ body {
   line-height: 1.6;
 }
 
-
-#add-post-section {
-  background-color: #ffffff;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 40px 32px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  border: 1px solid #d4e4e0;
-}
-
-/* Headings */
 h1, h2 {
   color: #225c5e;
   font-weight: 700;
 }
 
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-h2 {
-  font-size: 1.4rem;
-  margin-bottom: 16px;
-}
-
 .form-label {
-  display: block;
-  margin-bottom: 8px;
   font-weight: 600;
   color: #1e5558;
 }
 
-/* Input and textarea fields */
+/* Form Inputs */
 input.form-control,
 textarea.form-control {
   width: 100%;
@@ -66,34 +39,23 @@ textarea.form-control:focus {
   box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.2);
 }
 
-/* Button styling */
-button.btn-gradient {
-  width: 100%;
-  background: linear-gradient(135deg, #2c7a7b, #1e4d4e);
-  color: #fff;
-  font-size: 17px;
+/* Cards */
+.card {
+  border: 1px solid #dce8e7;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Save Button */
+button.btn-success {
   font-weight: 600;
-  padding: 14px 0;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(44, 122, 123, 0.2);
-  transition: transform 0.2s ease, background 0.3s ease;
+  padding: 10px 16px;
 }
 
-button.btn-gradient:hover {
-  background: linear-gradient(135deg, #256d6e, #143e3f);
-  transform: translateY(-2px);
-}
-
-
+/* Responsive */
 @media (max-width: 600px) {
   body {
     padding: 30px 16px;
-  }
-
-  #add-post-section {
-    padding: 28px 20px;
   }
 }
 
