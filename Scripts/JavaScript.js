@@ -12,9 +12,35 @@ function renderPosts() {
     const postHtml = $(`
       <div class="card mb-4">
         <div class="card-body">
-          <input type="text" class="form-control mb-2" value="${post.title}" data-index="${index}" data-field="title" />
-          <textarea class="form-control mb-2" rows="3" data-index="${index}" data-field="post">${post.post}</textarea>
-          <input type="date" class="form-control mb-2" value="${post.datePosted}" data-index="${index}" data-field="datePosted" />
+          <label for="title-${index}" class="form-label">Title</label>
+          <input 
+            type="text" 
+            id="title-${index}" 
+            class="form-control mb-2" 
+            value="${post.title}" 
+            data-index="${index}" 
+            data-field="title" 
+          />
+
+          <label for="post-${index}" class="form-label">Post Content</label>
+          <textarea 
+            id="post-${index}" 
+            class="form-control mb-2" 
+            rows="3" 
+            data-index="${index}" 
+            data-field="post"
+          >${post.post}</textarea>
+
+          <label for="datePosted-${index}" class="form-label">Date Posted</label>
+          <input 
+            type="date" 
+            id="datePosted-${index}" 
+            class="form-control mb-2" 
+            value="${post.datePosted}" 
+            data-index="${index}" 
+            data-field="datePosted" 
+          />
+
           <button class="btn btn-success save-btn" data-index="${index}">Save</button>
         </div>
       </div>
@@ -35,7 +61,7 @@ function fetchPosts() {
     });
 }
 
-// Save 
+// Save edited post in memory
 function savePost(index) {
   const card = $(`.save-btn[data-index=${index}]`).closest(".card-body");
   const title = card.find("input[data-field=title]").val();
@@ -46,7 +72,7 @@ function savePost(index) {
   alert(`Post ${index + 1} saved (temporarily in memory).`);
 }
 
-
+// Handle form submit to add new post
 $("#new-post-form").on("submit", function (e) {
   e.preventDefault();
   const newPost = {
