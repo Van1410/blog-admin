@@ -3,7 +3,7 @@ const blogDataUrl = "https://van1410.github.io/blog-data/posts.json";
 
 let posts = [];
 
-// Render posts to page
+// Render posts 
 function renderPosts() {
   const container = $("#posts-list");
   container.empty();
@@ -61,7 +61,7 @@ function fetchPosts() {
     });
 }
 
-// Save edited post in memory
+// W3s this 
 function savePost(index) {
   const card = $(`.save-btn[data-index=${index}]`).closest(".card-body");
   const title = card.find("input[data-field=title]").val();
@@ -72,7 +72,7 @@ function savePost(index) {
   alert(`Post ${index + 1} saved (temporarily in memory).`);
 }
 
-// Handle form submit to add new post
+// W3s again 
 $("#new-post-form").on("submit", function (e) {
   e.preventDefault();
   const newPost = {
