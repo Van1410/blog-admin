@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog Admin</title>
-  <link rel="stylesheet" href="styles/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="Styles/Style.css" />
 </head>
-<body class="bg-light text-dark">
-  <div class="container py-5">
-    <h1 class="mb-4">Blog Admin</h1>
+<body>
+  <main class="container py-4">
+    <h1 class="mb-4">Blog Admin Panel</h1>
 
-    <!-- Form to add a new blog post -->
+    <!-- Add New Post Form -->
     <form id="new-post-form" class="mb-5">
       <div class="mb-3">
         <label for="post-title" class="form-label">Title</label>
         <input type="text" class="form-control" id="post-title" required />
       </div>
       <div class="mb-3">
-        <label for="post-content" class="form-label">Post</label>
+        <label for="post-content" class="form-label">Content</label>
         <textarea class="form-control" id="post-content" rows="3" required></textarea>
       </div>
       <div class="mb-3">
@@ -29,20 +28,14 @@
       <button type="submit" class="btn btn-primary">Add Post</button>
     </form>
 
-    <!-- Posts will be rendered here -->
-    <div id="posts-list" class="posts-container"></div>
-  </div>
+    <!-- Posts Display -->
+    <section id="posts-list" aria-label="Blog posts list">
+      <!-- JS will render posts here -->
+    </section>
+  </main>
 
-  <!-- Footer with accessibility links -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p class="mb-1">© 2025 Van Hamlin</p>
-    <a href="https://validator.w3.org/nu/" class="text-white text-decoration-underline me-3" target="_blank">Nu HTML Checker</a>
-    <a href="https://wave.webaim.org/" class="text-white text-decoration-underline" target="_blank">WAVE Checker</a>
-  </footer>
-
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="scripts/JavaScript.js"></script>
+  <script src="Scripts/JavaScript.js"></script>
 </body>
 </html>
-
-
